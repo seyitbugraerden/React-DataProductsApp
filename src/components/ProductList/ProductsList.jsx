@@ -12,15 +12,7 @@ function ProductsList() {
   return (
     <section className="container">
       <h2>Product List</h2>
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper2"
-      >
+      <Swiper slidesPerView={4} spaceBetween={30} className="mySwiper2">
         {data.map((item, index) => (
           <SwiperSlide key={index}>
             <ProductItem item={item} />
