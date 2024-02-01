@@ -41,8 +41,10 @@ function ProductsList() {
   ]);
 
   useEffect(() => {
-    const filteredProducts = data.filter((item) => item.brand === search);
-    setProducts(filteredProducts);
+    if (search !== "") {
+      const filteredProducts = data.filter((item) => item.brand === search);
+      setProducts(filteredProducts);
+    }
   }, [search]);
 
   return (
