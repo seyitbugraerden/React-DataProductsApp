@@ -20,6 +20,9 @@ function ProductItem({ item }) {
     }
     cartItems.push(item);
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   };
 
   return (
