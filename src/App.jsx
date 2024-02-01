@@ -1,22 +1,12 @@
-import { useState } from "react";
-import data from "./data/data.json";
-import Header from "./components/Header";
-import Sec from "./components/Sec";
-import Footer from "./components/Footer";
-import ShopInsta from "./components/ShopInsta";
-import "./App.css";
+import React from "react";
+import Header from "./components/Header/Header";
+import Swiper from "./components/Swiper/MySwiper";
 
 function App() {
-  const [products, setProducts] = useState(data);
   return (
     <>
       <Header />
-      {/* {products.map((item, index) => (
-        <p key={index}>{item.title}</p>
-      ))} */}
-      <Sec />
-      <ShopInsta />
-      <Footer />
+      <Swiper />
     </>
   );
 }
