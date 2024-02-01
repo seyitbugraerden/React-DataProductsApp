@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Swiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "./ProductsList.css";
 import "swiper/css";
@@ -8,7 +8,7 @@ import ProductItem from "./ProductItem";
 import data from "../../data/data.json";
 
 function ProductsList() {
-  const [data, setData] = useState(data);
+  const [products, setProducts] = useState(data);
   return (
     <section className="container">
       <h2>Product List</h2>
@@ -22,7 +22,9 @@ function ProductsList() {
         className="mySwiper2"
       >
         {data.map((item, index) => (
-          <ProductItem key={index} item={item} />
+          <SwiperSlide key={index}>
+            <ProductItem item={item} />
+          </SwiperSlide>
         ))}
       </Swiper>
     </section>

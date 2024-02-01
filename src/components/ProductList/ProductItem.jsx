@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { SwiperSlide } from "swiper/react";
 import { Rating } from "primereact/rating";
 import { Dialog } from "primereact/dialog";
 import "./ProductsList.css";
@@ -9,32 +8,31 @@ function ProductItem({ item }) {
   const [visible, setVisible] = useState(false);
   return (
     <>
-      <SwiperSlide>
-        <div className="card">
-          <div className="card-image pb-2">
-            <img src="https://picsum.photos/400/400" alt="" />
-            <img src="https://picsum.photos/400/401" alt="" />
-          </div>
-          <div className="card-body">
-            <div className="d-flex justify-content-start align-items-start flex-column position-relative">
-              <Rating value={2} disabled cancel={false} />
-              <h5>
-                <strong className="pe-1">{item.title}</strong>iPhone 9
-              </h5>
-              <div className="icon-area">
-                <i className="bi bi-heart"></i>
-                <i className="bi bi-cart-plus"></i>
-              </div>
-            </div>
-            <strong className="price">549$</strong>
-            <button onClick={() => setVisible(true)} className="inspect">
-              İncele
-            </button>
-          </div>
+      <div className="card">
+        <div className="card-image pb-2">
+          <img src="https://picsum.photos/400/400" alt="" />
+          <img src="https://picsum.photos/400/401" alt="" />
         </div>
-      </SwiperSlide>
+        <div className="card-body">
+          <div className="d-flex justify-content-start align-items-start flex-column position-relative">
+            <Rating value={2} disabled cancel={false} />
+            <h5>
+              <strong className="pe-1">{item.brand}</strong>
+              {item.title}
+            </h5>
+            <div className="icon-area">
+              <i className="bi bi-heart"></i>
+              <i className="bi bi-cart-plus"></i>
+            </div>
+          </div>
+          <strong className="price">{item.price}</strong>
+          <button onClick={() => setVisible(true)} className="inspect">
+            İncele
+          </button>
+        </div>
+      </div>
       <Dialog
-        header="Header"
+        header="Product Detail"
         visible={visible}
         onHide={() => setVisible(false)}
         style={{ width: "50vw" }}
