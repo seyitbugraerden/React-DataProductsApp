@@ -12,7 +12,7 @@ function Header() {
   const cartItemsValue = cartValue ? JSON.parse(cartValue) : [];
 
   return (
-    <>
+    <header>
       <nav>
         <div className="container py-2 d-flex justify-content-between w-100 align-items-center">
           <div className="navbar-image">
@@ -46,7 +46,7 @@ function Header() {
       >
         <HeaderCard />
       </Dialog>
-    </>
+    </header>
   );
 }
 
