@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function HeaderCard() {
-  const [sepet, setSepet] = useState(
-    JSON.parse(localStorage.getItem("cartItems"))
-  );
+  const [sepet, setSepet] = useState([]);
+
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    if (cartItems) {
+      setSepet(cartItems);
+    }
+  }, []);
+
+  let toplam = 0;
+  sepet.map((element) => {
+    toplam += +element.price;
+  });
 
   return (
     <>
@@ -19,7 +29,7 @@ function HeaderCard() {
           <h6>{item.price}$</h6>
         </div>
       ))}
-      <p>Toplam Tutar : {toplam} </p>
+      <p>Toplam Tutar : {toplam} $ </p>
     </>
   );
 }

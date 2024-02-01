@@ -5,8 +5,4 @@ import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <PrimeReactProvider>
-    <App />
-  </PrimeReactProvider>
-);
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
