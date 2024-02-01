@@ -6,16 +6,18 @@ import "swiper/css";
 import "swiper/css/pagination";
 function ProductItem({ item }) {
   const [visible, setVisible] = useState(false);
+  const [imgSrc, setimgSrc] = useState(item.thumbnail);
+  const [value, setValue] = useState(item.rating);
   return (
     <>
       <div className="card">
         <div className="card-image pb-2">
-          <img src="https://picsum.photos/400/400" alt="" />
-          <img src="https://picsum.photos/400/401" alt="" />
+          <img src={item.thumbnail} alt="" />
+          <img src={item.images[0]} alt="" />
         </div>
         <div className="card-body">
           <div className="d-flex justify-content-start align-items-start flex-column position-relative">
-            <Rating value={2} disabled cancel={false} />
+            <Rating value={value} disabled cancel={false} />
             <h5>
               <strong className="pe-1">{item.brand}</strong>
               {item.title}
@@ -32,21 +34,37 @@ function ProductItem({ item }) {
         </div>
       </div>
       <Dialog
-        header="Product Detail"
+        header="Ürün Detay"
         visible={visible}
         onHide={() => setVisible(false)}
         style={{ width: "50vw" }}
         breakpoints={{ "960px": "75vw", "641px": "100vw" }}
       >
-        <p className="m-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <div className="row">
+          <div className="col-lg-5 overflow-hidden">
+            <img src={imgSrc} alt="" width="100%" />
+            <div className="img-cont">
+              {item.images.map((element, index) => (
+                <img
+                  key={index}
+                  src={element}
+                  onClick={() => {
+                    setimgSrc(element);
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="col-lg-1"></div>
+          <div className="col-lg-6">
+            <h2>
+              {item.brand} {item.title}
+            </h2>
+            <div className="text-muted py-2">Stock : {item.stock}</div>
+            <div className="text-muted">{item.category}</div>
+            <p className="pt-3">{item.description}</p>
+          </div>
+        </div>
       </Dialog>
     </>
   );
