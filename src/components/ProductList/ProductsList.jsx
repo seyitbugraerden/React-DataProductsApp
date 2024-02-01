@@ -57,7 +57,15 @@ function ProductsList() {
         placeholder="Select a Brand"
         className="w-full md:w-14rem mt-5 mb-2"
       />
-      <Swiper slidesPerView={4} spaceBetween={30} className="mySwiper2">
+      <Swiper
+        breakpoints={{
+          768: {
+            slidesPerView: 4,
+          },
+        }}
+        spaceBetween={30}
+        className="mySwiper2"
+      >
         {products.map((item, index) => (
           <SwiperSlide key={index}>
             <ProductItem item={item} />

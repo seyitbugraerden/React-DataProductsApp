@@ -6,3 +6,4 @@ nav i{color: white;font-size: 20px;}
 nav{position: fixed;z-index: 99;width: 100%;}
 .bi-box-fill{cursor: pointer;}
 #pr_id_1{scale: .7;}
+.bi-trash-fill{cursor: pointer;}

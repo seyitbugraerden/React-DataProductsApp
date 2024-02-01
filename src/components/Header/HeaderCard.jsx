@@ -11,10 +11,15 @@ function HeaderCard() {
   }, []);
 
   let toplam = 0;
-  sepet.map((element) => {
+  sepet.forEach((element) => {
     toplam += +element.price;
   });
 
+  const deleteOrder = (item) => {
+    const updatedSepet = sepet.filter((order) => order.id !== item.id);
+    setSepet(updatedSepet);
+    localStorage.setItem("cartItems", JSON.stringify(updatedSepet));
+  };
   return (
     <>
       {sepet.map((item, index) => (
@@ -27,6 +32,7 @@ function HeaderCard() {
             {item.brand} - {item.title}
           </h6>
           <h6>{item.price}$</h6>
+          <i className="bi bi-trash-fill" onClick={() => deleteOrder(item)}></i>
         </div>
       ))}
       <p>Toplam Tutar : {toplam} $ </p>

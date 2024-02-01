@@ -18,5 +18,5 @@
 .img-cont img{width: 22%;object-fit: contain;padding-top: 20px;cursor: pointer;height: 100px;}
 .col-lg-5 > img{height: 400px !important;width: 100%;object-fit: contain;}
 ul{padding-left: 0px !important;}
-
+.bi-cart-plus{cursor: pointer;}
   

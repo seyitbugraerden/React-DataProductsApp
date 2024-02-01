@@ -4,3 +4,7 @@
 .mySwiper .swiper-slide .container img{position: absolute;right: 5%;top: 30%;z-index: 1;filter: brightness(.8);}
 .mySwiper .swiper-pagination{padding-bottom: 10px;}
 .mySwiper .swiper-pagination-bullet-active{background:white !important;}
+@media(max-width:972px){
+    nav{padding-left: 10px;padding-right: 20px;}
+    .mySwiper .swiper-slide .container img{display: none;}
+}
