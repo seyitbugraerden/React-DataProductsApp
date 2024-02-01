@@ -4,3 +4,4 @@ ul li a:hover{color: rgb(194, 194, 194);}
 .navbar-image img{height: 100px;}
 nav i{color: white;font-size: 20px;}
 nav{position: fixed;z-index: 99;width: 100%;}
+.bi-box-fill{cursor: pointer;}
