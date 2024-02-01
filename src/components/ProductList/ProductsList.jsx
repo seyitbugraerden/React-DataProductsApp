@@ -49,7 +49,7 @@ function ProductsList() {
 
   return (
     <section className="container">
-      <h2>Product List</h2>
+      <h2>Product LIst</h2>
       <Dropdown
         value={search}
         options={brands}
