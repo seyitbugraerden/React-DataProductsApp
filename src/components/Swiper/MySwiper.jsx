@@ -42,7 +42,10 @@ function MySwiper() {
             alt=""
           />
         </div>
-        <img src="https://picsum.photos/1920/1080" alt="" />
+        <img
+          src="https://1.bp.blogspot.com/-8MHjCSMSut8/XZCnqWOWjCI/AAAAAAAAA_s/leDdkxTFXNok-2lqGZxLqpNtL6_A3bbzwCLcBGAsYHQ/s1600/PREDATOR%2B21%2BX%2B.jpg"
+          alt=""
+        />
       </SwiperSlide>
       <SwiperSlide>
         <div className="container">
@@ -61,7 +64,10 @@ function MySwiper() {
             alt=""
           />
         </div>
-        <img src="https://picsum.photos/1920/1081" alt="" />
+        <img
+          src="https://media.nu.nl/m/m1mxhmiaj1xo_wd1280/waarom-moeten-we-smartphones-nog-steeds-zo-vaak-opladen.jpg"
+          alt=""
+        />
       </SwiperSlide>
       <SwiperSlide>
         <div className="container">
@@ -80,7 +86,10 @@ function MySwiper() {
             alt=""
           />
         </div>
-        <img src="https://picsum.photos/1920/1082" alt="" />
+        <img
+          src="https://s3.amazonaws.com/cgcookie-rails/wp-uploads/2016/05/img_surface-pro.jpg"
+          alt=""
+        />
       </SwiperSlide>
     </Swiper>
   );
