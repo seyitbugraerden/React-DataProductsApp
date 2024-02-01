@@ -4,10 +4,24 @@ import { Dialog } from "primereact/dialog";
 import "./ProductsList.css";
 import "swiper/css";
 import "swiper/css/pagination";
+
 function ProductItem({ item }) {
   const [visible, setVisible] = useState(false);
-  const [imgSrc, setimgSrc] = useState(item.thumbnail);
+  const [imgSrc, setImgSrc] = useState(item.thumbnail);
   const [value, setValue] = useState(item.rating);
+
+  const handleAddToCart = () => {
+    const existingCartItems = localStorage.getItem("cartItems");
+    let cartItems = existingCartItems ? JSON.parse(existingCartItems) : [];
+    const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
+    if (isItemInCart) {
+      alert("Bu ürün zaten sepetinizde bulunmaktadır.");
+      return;
+    }
+    cartItems.push(item);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  };
+
   return (
     <>
       <div className="card">
@@ -23,7 +37,7 @@ function ProductItem({ item }) {
               {item.title}
             </h5>
             <div className="icon-area">
-              <i className="bi bi-cart-plus"></i>
+              <i className="bi bi-cart-plus" onClick={handleAddToCart}></i>
             </div>
           </div>
           <strong className="price">{item.price}$</strong>
@@ -48,7 +62,7 @@ function ProductItem({ item }) {
                   key={index}
                   src={element}
                   onClick={() => {
-                    setimgSrc(element);
+                    setImgSrc(element);
                   }}
                 />
               ))}

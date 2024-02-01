@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../../assets/img/logo.png";
 import { Badge } from "primereact/badge";
 import "./Header.css";
 
 function Header() {
+  const cartValue = localStorage.getItem("cartItems");
+  const cartItemsValue = cartValue ? JSON.parse(cartValue) : [];
+
   return (
     <nav>
       <div className="container py-2 d-flex justify-content-between w-100 align-items-center">
@@ -18,7 +21,10 @@ function Header() {
             <li className="navbar-item">
               <a href="">
                 <i className="bi bi-box-fill p-overlay-badge">
-                  <Badge value="5" severity="danger"></Badge>
+                  <Badge
+                    value={cartItemsValue.length}
+                    severity="danger"
+                  ></Badge>
                 </i>
               </a>
             </li>
