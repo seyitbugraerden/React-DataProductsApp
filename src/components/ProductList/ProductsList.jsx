@@ -25,12 +25,15 @@ function ProductsList() {
               <img src="https://picsum.photos/400/400" alt="" />
               <img src="https://picsum.photos/400/401" alt="" />
             </div>
-            <div className="card-body">
-              <div className="d-flex justify-content-start align-items-start flex-column">
+            <div className="card-body ">
+              <div className="d-flex justify-content-start align-items-start flex-column position-relative">
                 <Rating value={2} disabled cancel={false} />
                 <h4>İphone</h4>
                 <div className="text-muted">Apple</div>
-                <div className="icon-area"></div>
+                <div className="icon-area">
+                  <i class="bi bi-heart"></i>
+                  <i class="bi bi-cart-plus"></i>
+                </div>
               </div>
             </div>
           </div>
