@@ -27,7 +27,7 @@ function ProductItem({ item }) {
               <i className="bi bi-cart-plus"></i>
             </div>
           </div>
-          <strong className="price">{item.price}</strong>
+          <strong className="price">{item.price}$</strong>
           <button onClick={() => setVisible(true)} className="inspect">
             İncele
           </button>
