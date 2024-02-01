@@ -1,12 +1,14 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useState } from "react";
+import { Swiper } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import { Rating } from "primereact/rating";
 import "./ProductsList.css";
 import "swiper/css";
 import "swiper/css/pagination";
+import ProductItem from "./ProductItem";
+import data from "../../data/data.json";
 
 function ProductsList() {
+  const [data, setData] = useState(data);
   return (
     <section className="container">
       <h2>Product List</h2>
@@ -19,25 +21,9 @@ function ProductsList() {
         modules={[Pagination]}
         className="mySwiper2"
       >
-        <SwiperSlide>
-          <div className="card">
-            <div className="card-image pb-2">
-              <img src="https://picsum.photos/400/400" alt="" />
-              <img src="https://picsum.photos/400/401" alt="" />
-            </div>
-            <div className="card-body ">
-              <div className="d-flex justify-content-start align-items-start flex-column position-relative">
-                <Rating value={2} disabled cancel={false} />
-                <h4>İphone</h4>
-                <div className="text-muted">Apple</div>
-                <div className="icon-area">
-                  <i class="bi bi-heart"></i>
-                  <i class="bi bi-cart-plus"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+        {data.map((item, index) => (
+          <ProductItem key={index} item={item} />
+        ))}
       </Swiper>
     </section>
   );

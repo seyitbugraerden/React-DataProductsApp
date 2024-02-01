@@ -1,5 +1,7 @@
 .mySwiper2 .card img{transition:600ms;width: 100%;height: 300px;border-top-left-radius:20px;border-top-right-radius:20px;position: absolute;top:0;left:0}
 .mySwiper2 .card-image{height:300px}
+.mySwiper2{padding-top: 60px;}
+.mySwiper2 .card-body{padding-bottom:80px;}
 .mySwiper2 .card-image img:hover{opacity: 0;}
 .mySwiper2 .card{border-radius:1em;border:0px !important;outline: 0px !important;border-top-left-radius:20px;border-top-right-radius:20px;position: relative;}
 .mySwiper2 .p-rating{padding-bottom:10px;scale:.7;transform-origin:left}
@@ -7,4 +9,7 @@
 .icon-area{position: absolute;top: 0px;right:0px;display:flex;flex-direction:row;gap:10px}
 .icon-area i{border:1px solid rgb(0,0,0,.4);padding:4px 8px;border-radius:50%;font-size:14px;transition:600ms}
 .icon-area .bi-heart:hover{color:white;background-color:red;border:1px solid rgb(0,0,0,0)}
-.icon-area .bi-cart-plus:hover{color:white;background-color:orange;border:1px solid rgb(0,0,0,0); }
+.icon-area .bi-cart-plus:hover{color:white;background-color:orange;border:1px solid rgb(0,0,0,0);}
+.mySwiper2 .card-body h5{font-weight: 200;font-size: 20px;}
+.mySwiper2 .price{position: absolute;right:20px;bottom: 20px;font-size: 20px;}
+.mySwiper2 .inspect{padding: 5px 20px;background-color: rgb(69, 25, 25);position: absolute;left: 20px;bottom: 20px;color: white;border: 0px;outline: 0px;border-radius: .5em;}
