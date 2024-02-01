@@ -23,7 +23,6 @@ function ProductItem({ item }) {
               {item.title}
             </h5>
             <div className="icon-area">
-              <i className="bi bi-heart"></i>
               <i className="bi bi-cart-plus"></i>
             </div>
           </div>
