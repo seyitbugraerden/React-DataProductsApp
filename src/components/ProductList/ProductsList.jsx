@@ -9,11 +9,38 @@ import data from "../../data/data.json";
 
 function ProductsList() {
   const [products, setProducts] = useState(data);
-  const [search, setSearch] = useState("Apple");
-  const [brands, setBrands] = useState(["Apple", "Samsung"]);
+  const [search, setSearch] = useState("");
+  const [brands, setBrands] = useState([
+    "Apple",
+    "Samsung",
+    "OPPO",
+    "Huawei",
+    "Microsoft Surface",
+    "Infinix",
+    "HP Pavilion",
+    "Impression of Acqua Di Gio",
+    "Royal_Mirage",
+    "Fog Scent Xpressio",
+    "Al Munakh",
+    "Lord - Al-Rehab",
+    "L'Oreal Paris",
+    "Hemani Tea",
+    "Dermive",
+    "ROREC White Rice",
+    "Fair & Clear",
+    "Saaf & Khaas",
+    "Bake Parlor Big",
+    "Baking Food Items",
+    "Fauji",
+    "Dry Rose",
+    "Boho Decor",
+    "Flying Wooden",
+    "LED Lights",
+    "Luxury Palace",
+    "Golden",
+  ]);
 
   useEffect(() => {
-    // Filter products based on selected brand
     const filteredProducts = data.filter((item) => item.brand === search);
     setProducts(filteredProducts);
   }, [search]);
